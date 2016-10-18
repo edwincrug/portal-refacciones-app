@@ -1,0 +1,56 @@
+<!-- <ion-view title="Mi Cuenta" id="page11" class=" ">
+    <ion-content padding="false" class="has-header">
+        <div class="list card manual-card-fullwidth " id="miCuenta-card21">
+            <div class="item item-body " id="miCuenta-list-item-container8">
+                <p id="miCuenta-markdown8" style="margin-top:0px;color:#000000;" class=" ">Mi Empresa SA de CV
+                    <strong>ABCD0101010A0</strong>
+                </p>
+            </div>
+            <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
+                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+            </div>
+            <ion-item class="item-icon-left calm  " id="miCuenta-list-item13">
+                <i class="icon ion-android-lock"></i>Cambiar contraseña</ion-item>
+            <a ui-sref="login" id="miCuenta-button12" class=" button button-energized  button-block icon-right ion-close ">Cerrar Sesión</a>
+        </div>
+    </ion-content>
+</ion-view> -->
+<ion-view title="Datos del Pedido" id="page5" class=" " style="background-color:#ecf0f5;">
+    <ion-content padding="true" class="has-header">
+        <div class="">
+            <img src="img/logoA.png" width="40%" height="auto" style="display:block;">
+        </div>
+        <h5 id="zARABASBAL1-heading2" style="color:#000000;font-weight:300;text-align:right;" class=" ">{{nombreUsuario}}</h5>
+        <h4 id="zARABASBAL1-heading7" style="color:#000000;font-weight:400;" class=" "><strong>Cliente :</strong> {{pedidoDireccion[0].per_nomrazon}}</h4>
+        <BR>
+        <!-- <a href="geo:{{pedidoDireccion[0].RTD_CALLE1}}%20{{pedidoDireccion[0].RTD_NUMEXTER}}%20{{pedidoDireccion[0].RTD_COLONIA}}%20{{pedidoDireccion[0].RTD_DELEGAC}}%20%20%20" id="dir1" id="dir1" class="button button-calm button-block">{{pedidoDireccion[0].RTD_CALLE1}} {{pedidoDireccion[0].RTD_NUMEXTER}} {{pedidoDireccion[0].RTD_COLONIA}} {{pedidoDireccion[0].RTD_DELEGAC}}</a> -->
+        <a href="geo:19.3693052,-99.1538903?q=19.3693052,-99.1538903({{pedidoDireccion[0].per_nomrazon}})" id="dir1" id="dir1" class="button button-calm button-block">{{pedidoDireccion[0].RTD_CALLE1}} {{pedidoDireccion[0].RTD_NUMEXTER}} {{pedidoDireccion[0].RTD_COLONIA}} {{pedidoDireccion[0].RTD_DELEGAC}}</a>
+        <BR>
+        <a href="tel:5598 1650" id="dir1" id="dir1" class="button button-positive button-block">Telefono de : {{pedidoDireccion[0].RTD_TEL1PER1}}</a>
+        <!--         <BR>
+            <strong>Dirección :</strong>Norte 45, 02300 Ciudad de México, D.F.</p> -->
+        <p id="zARABASBAL1-markdown6" style="color:#000000;" class=" ">
+            <!-- <strong>Items :</strong>70 piezas</p> -->
+        
+            <ul class="list">
+                <li class="item" ng-repeat="datospedidoDetalles in datospedidoDetalle">
+                    <div>
+                       <strong> No. Parte: {{datospedidoDetalles.PMD_CODIGO}}</strong>
+                       <BR> {{datospedidoDetalles.PMD_DESPARTE}}
+                    </div>
+                    <div class="mismalinea">
+                         <input type="number" ng-model="datospedidoDetalle[$index].PMD_CANTIDAD" ng-value="datospedidoDetalle[$index].PMD_CANTIDAD"></input>
+                    </div>
+                  </li>
+            </ul>
+          
+        <div id="zARABASBAL1-button-bar2" class=" button-bar ">
+            <a ng-click="nuevaDevolucion(datospedidoDetalle)" ui-sref="confirmacion" class="button button-calm button-block">Entregar</a>
+            <button id="zARABASBAL1-button7" ng-click="getPhoto()" class="button button-positive button-block">Firmar</button>
+            <div id="third">
+                &nbsp;
+            </div>
+        </div>
+        <img ng-src="{{lastPhoto}}" style="max-width: 100%">
+    </ion-content>
+</ion-view>

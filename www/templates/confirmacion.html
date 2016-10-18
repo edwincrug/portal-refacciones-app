@@ -1,0 +1,36 @@
+<ion-view title="Confirmación de Pedido" id="page5" class=" " style="background-color:#ecf0f5;">
+    <ion-content padding="true" class="has-header">
+        <div class="">
+            <img src="img/logoA.png" width="40%" height="auto" style="display:block;">
+        </div>
+        <h5  style="color:#000000;font-weight:300;text-align:right;" class=" ">{{nombreUsuario}}</h5>
+        <h4  style="color:#000000;font-weight:400;" class=" "><strong>Cliente :</strong> {{pedidoDireccion[0].per_nomrazon}}</h4>
+        <BR>
+           <p id="zARABASBAL1-markdown6" style="color:#000000;" class=" ">
+        
+            <ul class="list">
+                <li class="item" ng-repeat="datospedidoDetalles in datospedidoDetalle">
+                    <div>
+                       <strong> No. Parte: {{datospedidoDetalles.PMD_CODIGO}}</strong>
+                       <BR> {{datospedidoDetalles.PMD_DESPARTE}}
+                    </div>
+
+
+                    <div class="mismalinea">
+
+                   </h4>{{datospedidoDetalle[$index].PMD_CANTIDAD}}</h4>
+                        
+                    </div>
+                  </li>
+            </ul>
+          
+        <strong>Insertar el token del pedido</strong>
+        <BR>  
+        <BR>   
+        <div class="mismalineatoken">
+            <input type="text" ng-model="token" ng-value=""></input>
+        </div>
+        <a ng-click="compara()" ui-sref="exito" class="button button-calm button-block">Entregar</a>
+        <img ng-src="{{lastPhoto}}" style="max-width: 100%">
+    </ion-content>
+</ion-view>

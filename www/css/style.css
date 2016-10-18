@@ -1,0 +1,21 @@
+/* Empty. Add your own CSS if you like */
+ion-item.item:hover a {
+  background-color: slategray;
+  box-shadow: inset 0px 0px 0px 1px red;
+}
+
+.mismalinea {
+    display: inline-block;
+    position: absolute; 
+    border:1px solid grey;
+    top:25%;
+    left:80%
+  }
+
+.mismalineatoken {
+    display: inline-block;
+    position: relative; 
+    border:1px solid grey;
+    top:25%;
+    left:25%
+  }

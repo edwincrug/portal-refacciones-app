@@ -1,0 +1,17 @@
+<ion-view title="Lista" id="page8" class=" " style="background-color:#ecf0f5;">
+    <ion-content padding="true" class="has-header">
+        <div class="">
+            <img src="img/logoA.png" width="40%" height="auto" style="display:block;">
+        </div>
+        <h5 id="lista-heading8" style="color:#000000;font-weight:300;text-align:right;" class=" ">{{nombreUsuario}}</h5>
+
+        <ion-list id="lista-list10" class=" ">
+             <ion-item class="item-icon-right  " id="lista-list-item5" ui-sref="miCuenta({pedidoDetalle:pedido.numpedido})" ng-repeat="pedido in datosPedidos.data" ng-click="GetPedidoDetalle(pedido)">{{pedido.PMM_REF2}} <strong>({{pedido.PMM_TOTAL  | currency}})</strong> <BR>
+            <small>{{pedido.PMM_OBSERVACIONES}}  </small> 
+                <i class="icon ion-android-menu"></i>
+            </ion-item>
+         </ion-list>
+   
+    </ion-content>
+
+</ion-view>
